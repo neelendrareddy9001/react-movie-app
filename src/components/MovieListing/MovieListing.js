@@ -5,7 +5,9 @@ import MovieCard from "../MovieCard/MovieCard";
 
 const MovieListing = () => {
   const movies = useSelector(getAllMovies);
-  let renderMovies = "";
+  let renderMovies,
+    renderShows = "";
+
   renderMovies =
     movies.Response === "True" ? (
       movies.Search.map((movie, index) => (
