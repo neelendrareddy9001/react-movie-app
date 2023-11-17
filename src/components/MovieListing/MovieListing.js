@@ -2,11 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { getAllMovies } from "../../features/Movies/movieSlice";
 import MovieCard from "../MovieCard/MovieCard";
+import "./movieListing.scss";
 
 const MovieListing = () => {
   const movies = useSelector(getAllMovies);
-  let renderMovies,
-    renderShows = "";
+  let renderMovies = "";
 
   renderMovies =
     movies.Response === "True" ? (
@@ -23,7 +23,7 @@ const MovieListing = () => {
     <div className="movie-wrapper">
       <div className="movie-list">
         <h2>Movies</h2>
-        <div className="movie-container"></div>
+        <div className="movie-container">{renderMovies}</div>
       </div>
     </div>
   );
