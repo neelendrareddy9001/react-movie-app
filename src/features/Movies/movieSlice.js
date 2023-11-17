@@ -26,7 +26,7 @@ export const fetchAsyncShows = createAsyncThunk(
 
 const initialState = {
   movies: {},
-  shwos: {},
+  shows: {},
 };
 
 const movieSlice = createSlice({
@@ -49,9 +49,14 @@ const movieSlice = createSlice({
       console.log("Rejected");
       return { ...state, movies: payload };
     },
+    [fetchAsyncShows.fulfilled]: (state, { payload }) => {
+      console.log("Fetched successfully");
+      return { ...state, shows: payload };
+    },
   },
 });
 
 export const { addMovie } = movieSlice.actions;
 export const getAllMovies = (state) => state.movies.movies;
+export const getAllShows = (state) => state.movies.shows;
 export default movieSlice.reducer;
