@@ -1,4 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import movieApi from "../../common/apis/movieApi";
+import { APIKEY } from "../../common/apis/MovieApiKeys";
+
+const fetchAsyncMovies = createAsyncThunk(
+  "movies/fetchAsyncMovies",
+  async () => {
+    const movieText = "Harry";
+    const response = await movieApi.get(
+      `?apikey=${APIKEY}&s=${movieText}&type=movie`
+    );
+    response.data;
+  }
+);
 
 const initialState = {
   movies: {},
