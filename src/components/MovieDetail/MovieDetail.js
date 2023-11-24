@@ -36,6 +36,32 @@ const MovieDetail = () => {
             {data.Year}
           </span>
         </div>
+        <div className="movie-plot">{data.Plot}</div>
+        <div className="movie-info">
+          <div>
+            <span>Director</span>
+            <span>{data.Director}</span>
+          </div>
+          <div>
+            <span>Stars</span>
+            <span>{data.Actors}</span>
+          </div>
+          <div>
+            <span>Generes</span>
+            <span>{data.Gener}</span>
+          </div>
+          <div>
+            <span>Languages</span>
+            <span>{data.Language}</span>
+          </div>
+          <div>
+            <span>Awards</span>
+            <span>{data.Awards}</span>
+          </div>
+        </div>
+      </div>
+      <div className="movie-right">
+        <img src={data.Poster} alt={data.Title} />
       </div>
     </div>
   );
