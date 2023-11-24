@@ -14,7 +14,31 @@ const MovieDetail = () => {
   useEffect(() => {
     dispatch(fetchAsyncMovieOrShowDetail(imdbID));
   }, [dispatch, imdbID]);
-  return <div>MovieDetail</div>;
+  return (
+    <div className="movie-section">
+      <div className="section-left">
+        <div className="movie-title">{data.title}</div>
+        <div className="movie-raring">
+          <span>
+            IMDB rating <i className="fa fa-star"></i>
+            {data.imdbRating}
+          </span>
+          <span>
+            IMDB Votes <i className="fa fa-thumbs-up"></i>
+            {data.imdbVotes}
+          </span>
+          <span>
+            Runtime <i className="fa film"></i>
+            {data.Runtime}
+          </span>
+          <span>
+            Year <i className="fa fa-calender"></i>
+            {data.Year}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default MovieDetail;
