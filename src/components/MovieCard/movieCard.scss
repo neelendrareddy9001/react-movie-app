@@ -21,6 +21,19 @@
   }
 }
 
+.card-bottom {
+  padding: 20px;
+}
+
+.card-info {
+  color: $fontPrimary;
+  h4 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+}
+
 .card-info {
   color: $fontPrimary;
   h4 {
