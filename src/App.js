@@ -14,7 +14,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" Component={Home} />
-            <Route path="/movie/:imdbId" Component={MovieDetail} />
+            <Route path="/movie/:imdbID" Component={MovieDetail} />
             <Route Component={PageNotFound} />
           </Routes>
         </div>

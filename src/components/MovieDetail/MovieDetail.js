@@ -5,6 +5,7 @@ import {
   fetchAsyncMovieOrShowDetail,
   getSelectedMovieOrShow,
 } from "../../features/Movies/movieSlice";
+import "./movieDetail.scss";
 
 const MovieDetail = () => {
   const { imdbID } = useParams();
@@ -17,8 +18,8 @@ const MovieDetail = () => {
   return (
     <div className="movie-section">
       <div className="section-left">
-        <div className="movie-title">{data.title}</div>
-        <div className="movie-raring">
+        <div className="movie-title">{data.Title}</div>
+        <div className="movie-rating">
           <span>
             IMDB rating <i className="fa fa-star"></i>
             {data.imdbRating}
@@ -28,7 +29,7 @@ const MovieDetail = () => {
             {data.imdbVotes}
           </span>
           <span>
-            Runtime <i className="fa film"></i>
+            Runtime <i className="fa fa-film"></i>
             {data.Runtime}
           </span>
           <span>
