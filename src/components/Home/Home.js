@@ -26,7 +26,7 @@ const Home = () => {
       dispatch(fetchAsyncShows(showText));
     };
     fetchMovies();
-  }, []);
+  });
 
   return (
     <div>

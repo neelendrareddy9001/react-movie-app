@@ -15,6 +15,7 @@ const Header = () => {
     e.preventDefault();
     dispatch(fetchAsyncMovies(term));
     dispatch(fetchAsyncShows(term));
+    setTerm(" ");
   };
   return (
     <div className="header">
