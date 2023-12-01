@@ -10,6 +10,8 @@ import { APIKEY } from "../../common/apis/MovieApiKeys";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const movieText = "Harry";
+  const showText = "Friends";
   useEffect(() => {
     const moviesText = "Harry";
     const fetchMovies = async () => {
@@ -20,8 +22,8 @@ const Home = () => {
         });
 
       console.log("The response from API", response);
-      dispatch(fetchAsyncMovies());
-      dispatch(fetchAsyncShows());
+      dispatch(fetchAsyncMovies(movieText));
+      dispatch(fetchAsyncShows(showText));
     };
     fetchMovies();
   }, []);
