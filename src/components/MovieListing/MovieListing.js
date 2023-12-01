@@ -4,17 +4,12 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import { getAllMovies, getAllShows } from "../../features/Movies/movieSlice";
 import MovieCard from "../MovieCard/MovieCard";
 import "./movieListing.scss";
+import { Settings } from "../../common/setting";
 
 const MovieListing = () => {
-  const settings = {
-    dots: false,
-    inifinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 3,
-  };
   const movies = useSelector(getAllMovies);
   const shows = useSelector(getAllShows);
+
   let renderMovies,
     renderShows = "";
 
@@ -44,12 +39,14 @@ const MovieListing = () => {
       <div className="movie-list">
         <h2>Movies</h2>
         <div className="movie-container">
-          <Slider {...settings}>{renderMovies}</Slider>
+          <Slider {...Settings}>{renderMovies}</Slider>
         </div>
       </div>
       <div className="show-list">
         <h2>Shows</h2>
-        <div className="movie-container">{renderShows}</div>
+        <div className="movie-container">
+          <Slider {...Settings}>{renderShows}</Slider>
+        </div>
       </div>
     </div>
   );
